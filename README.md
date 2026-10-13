@@ -1,7 +1,7 @@
-# SQL Injection Lab — DBS401 (FPT University)
+# SQL Injection Lab
 
 > ⚠️ **TUYÊN BỐ GIÁO DỤC / PHẠM VI HỢP PHÁP**
-> Ứng dụng này **cố ý** chứa lỗ hổng SQL injection để phục vụ học tập môn DBS401.
+> Ứng dụng này **cố ý** chứa lỗ hổng SQL injection để phục vụ học tập.
 > - Chỉ chạy trên **máy của bạn** tại `127.0.0.1`. **Không** deploy ra Internet.
 > - Chỉ thực hành trên **chính lab này** hoặc hệ thống bạn **được phép** kiểm thử.
 > - Áp dụng kỹ thuật tấn công lên hệ thống không được phép là **vi phạm pháp luật**.
@@ -67,7 +67,7 @@ python3 exploit.py union      # hoặc từng loại: error|union|boolean|time|o
 | `admin_secrets` | id, name, flag                                   | mục tiêu (CTF flag) |
 
 **Mục tiêu:** trích xuất mật khẩu `admin` (`S3cr3t_Admin_2024!`) và `flag` trong
-`admin_secrets` (`DBS401{...}`) bằng **mỗi** kỹ thuật.
+`admin_secrets` (`FLAG{...}`) bằng **mỗi** kỹ thuật.
 
 > **Mẹo công cụ:** dùng trình duyệt, `curl`, hoặc Burp Repeater. Nhớ **URL-encode** khi
 > gửi qua URL (dấu cách→`%20`, `'`→`%27`). Với `curl` POST dùng `--data-urlencode`.
@@ -161,7 +161,7 @@ Ghép một `SELECT` của attacker vào kết quả → đọc **dữ liệu b�
 ```bash
 curl "http://127.0.0.1:5000/products?id=0%20UNION%20SELECT%20id,username,password%20FROM%20users"
 ```
-→ Kết quả: `admin / S3cr3t_Admin_2024!` và flag `DBS401{m4nu4l_sql1_m4st3r}`.
+→ Kết quả: `admin / S3cr3t_Admin_2024!` và flag `FLAG{m4nu4l_sql1_m4st3r}`.
 
 **Biến thể qua LIKE** (`?search=`, ngữ cảnh `name LIKE '%...%'`):
 ```
@@ -380,4 +380,4 @@ tham số hoá, kể cả với dữ liệu lấy từ chính CSDL của mình.
 rm -f lab.db && rm -rf .venv
 ```
 
-*Tài liệu phục vụ môn DBS401 — FPT University. Chỉ dùng trong môi trường lab được phép.*
+*Tài liệu lab giáo dục. Chỉ dùng trong môi trường lab được phép.*

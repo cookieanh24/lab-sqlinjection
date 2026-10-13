@@ -1,5 +1,5 @@
 """
-init_db.py  -  Khoi tao CSDL SQLite cho SQLi Lab (DBS401 / FPTU)
+init_db.py  -  Khoi tao CSDL SQLite cho SQLi Lab
 
 Tao file lab.db voi du lieu mau. Chay lai se xoa va tao moi.
     python3 init_db.py
@@ -56,10 +56,10 @@ def init():
     cur.executemany(
         "INSERT INTO users (username, password, role, email, credit_card) VALUES (?,?,?,?,?)",
         [
-            ("admin",  "S3cr3t_Admin_2024!", "admin", "admin@dbs401.lab",  "4111-1111-1111-1111"),
-            ("alice",  "alicepass",          "user",  "alice@dbs401.lab",  "5500-0000-0000-0004"),
-            ("bob",    "bobpass123",         "user",  "bob@dbs401.lab",    "3400-0000-0000-009"),
-            ("carol",  "carol!2024",         "user",  "carol@dbs401.lab",  "6011-0000-0000-0004"),
+            ("admin",  "S3cr3t_Admin_2024!", "admin", "admin@sqli.lab",  "4111-1111-1111-1111"),
+            ("alice",  "alicepass",          "user",  "alice@sqli.lab",  "5500-0000-0000-0004"),
+            ("bob",    "bobpass123",         "user",  "bob@sqli.lab",    "3400-0000-0000-009"),
+            ("carol",  "carol!2024",         "user",  "carol@sqli.lab",  "6011-0000-0000-0004"),
         ],
     )
 
@@ -76,7 +76,7 @@ def init():
 
     cur.execute(
         "INSERT INTO admin_secrets (name, flag) VALUES (?, ?)",
-        ("master_flag", "DBS401{m4nu4l_sql1_m4st3r}"),
+        ("master_flag", "FLAG{m4nu4l_sql1_m4st3r}"),
     )
 
     con.commit()

@@ -1,6 +1,6 @@
 """
 ===========================================================================
- OOB COLLECTOR  -  "server cua attacker" cho Out-of-Band SQLi (DBS401)
+ OOB COLLECTOR  -  "server cua attacker" cho Out-of-Band SQLi
 ===========================================================================
  Mo phong Burp Collaborator / interactsh / mot DNS-HTTP server ma attacker
  kiem soat. Khi CSDL nan nhan bi ep goi ra ngoai (qua ham dns_lookup trong
