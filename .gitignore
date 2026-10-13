@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Lab artifacts (tao lai bang init_db.py)
+lab.db
+
+# OS
+.DS_Store

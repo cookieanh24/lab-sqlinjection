@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Login <span class="tag">auth bypass</span></h2>
+<form method="post" action="/login">
+  <div><label>username: <input name="username"></label></div>
+  <div><label>password: <input name="password" type="text"></label></div>
+  <button>Dang nhap</button>
+</form>
+{% if query %}<p>Truy van chay: <code>{{ query }}</code></p>{% endif %}
+{% if message %}<p class="err">{{ message }}</p>{% endif %}
+<p><small>Thu username = <code>admin' -- </code> (co dau cach cuoi) va password bat ky,
+  hoac <code>' OR '1'='1</code>.</small></p>
+{% endblock %}

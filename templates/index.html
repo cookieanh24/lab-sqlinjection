@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>SQL Injection Lab - DBS401</h1>
+<p>Lab to chuc theo <b>phan loai chuan</b> cua SQL injection. Xem <code>README.md</code>
+   de biet cach khai thac thu cong chi tiet.</p>
+
+<h3>A. In-band SQLi <small>(du lieu ve tren cung kenh)</small></h3>
+<ul>
+  <li><span class="tag">Error-based</span> → <a href="/products?id=1">/products?id=1</a></li>
+  <li><span class="tag">UNION-based</span> → <a href="/products?id=1">/products?id=1</a></li>
+</ul>
+
+<h3>B. Inferential / Blind SQLi <small>(suy luan, khong lo du lieu)</small></h3>
+<ul>
+  <li><span class="tag">Boolean-based</span> → <a href="/check?username=admin">/check?username=admin</a></li>
+  <li><span class="tag">Time-based</span> → <a href="/track">/track</a></li>
+</ul>
+
+<h3>C. Out-of-band (OOB) SQLi <small>(rut du lieu qua kenh khac)</small></h3>
+<ul>
+  <li><span class="tag">OOB</span> → <a href="/lookup">/lookup</a>
+      (can chay <code>oob_collector.py</code>, xem <a href="http://127.0.0.1:5001/log" target="_blank">collector /log</a>)</li>
+</ul>
+
+<h3>D. Vector bo sung <small>(minh hoa impact)</small></h3>
+<ul>
+  <li>Authentication bypass → <a href="/login">/login</a></li>
+  <li>Stacked queries → <a href="/feedback">/feedback</a></li>
+  <li>Second-order → <a href="/register">/register</a> rồi <a href="/profile">/profile</a></li>
+</ul>
+
+<p><b>Muc tieu CTF:</b> trich xuat <code>flag</code> trong bang <code>admin_secrets</code>
+   va mat khau cua <code>admin</code> bang tung ky thuat.</p>
+{% endblock %}

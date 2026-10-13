@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Dashboard</h2>
+<p>Dang nhap voi tai khoan: <b>{{ user }}</b> (role: <b>{{ role }}</b>)</p>
+{% if role == 'admin' %}
+  <p style="color:#27ae60"><b>Ban dang la ADMIN.</b> Auth bypass thanh cong neu ban khong biet mat khau that.</p>
+{% endif %}
+<p><a href="/logout">Dang xuat</a></p>
+{% endblock %}

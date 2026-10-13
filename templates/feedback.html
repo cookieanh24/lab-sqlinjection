@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Feedback <span class="tag">stacked queries</span></h2>
+<form method="post" action="/feedback">
+  <label>Ten cua ban: <input name="name"></label>
+  <button>Gui</button>
+</form>
+{% if query %}<p>Truy van chay: <code>{{ query }}</code></p>{% endif %}
+{% if message %}<p>{{ message }}</p>{% endif %}
+
+<h3>Feedback gan day</h3>
+<table>
+  <tr><th>username</th><th>message</th></tr>
+  {% for it in items %}
+  <tr><td>{{ it['username'] }}</td><td>{{ it['message'] }}</td></tr>
+  {% endfor %}
+</table>
+<p><small>Endpoint nay dung <code>executescript()</code> nen chap nhan nhieu cau lenh.
+  Thu <code>a', 'x'); UPDATE users SET role='admin' WHERE username='alice'; -- </code></small></p>
+{% endblock %}

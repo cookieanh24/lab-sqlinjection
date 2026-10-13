@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Register <span class="tag">second-order (buoc 1)</span></h2>
+<form method="post" action="/register">
+  <div><label>username: <input name="username"></label></div>
+  <div><label>password: <input name="password" type="text"></label></div>
+  <button>Dang ky</button>
+</form>
+{% if message %}<p>{{ message }}</p>{% endif %}
+<p><small>Buoc ghi nay AN TOAN (co tham so hoa). Nhung hay dat username chua payload,
+  vi du <code>x' UNION SELECT 1,flag,3 FROM admin_secrets -- </code>, roi mo <code>/profile</code>
+  de payload kich hoat o buoc doc.</small></p>
+{% endblock %}

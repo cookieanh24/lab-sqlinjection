@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Check username <span class="tag">boolean blind</span></h2>
+<form method="get" action="/check">
+  <label>username: <input name="username" value="{{ username or '' }}"></label>
+  <button>Kiem tra</button>
+</form>
+{% if result %}
+  <p>Ket qua: <b>{{ result }}</b></p>
+{% endif %}
+<p><small>Chi tra ve EXISTS/NOT FOUND, khong lo du lieu. Suy luan tung ky tu bang
+  phan biet TRUE/FALSE, vi du <code>admin' AND substr(password,1,1)='S' --</code>.</small></p>
+{% endblock %}

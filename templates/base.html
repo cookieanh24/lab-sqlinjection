@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQLi Lab - DBS401</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto;
+           padding: 16px; line-height: 1.5; }
+    nav a { margin-right: 10px; }
+    code, pre { background: #8883; padding: 2px 5px; border-radius: 4px; }
+    pre { padding: 10px; overflow-x: auto; }
+    .err { color: #c0392b; background: #c0392b22; padding: 8px; border-radius: 6px;
+           white-space: pre-wrap; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #8885; padding: 6px 8px; text-align: left; }
+    input { padding: 6px; margin: 4px 0; }
+    .banner { background: #e67e2222; border: 1px solid #e67e22; padding: 8px 12px;
+              border-radius: 6px; font-size: 0.9em; }
+    .tag { font-size: 0.75em; background: #2980b9; color: #fff; padding: 1px 6px;
+           border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <div class="banner">⚠️ <b>Lab giao duc DBS401</b> - co y chua lo hong SQLi. Chi chay tren 127.0.0.1.</div>
+  <nav style="margin:12px 0;">
+    <a href="/">Home</a>
+    <a href="/products?id=1">Products</a>
+    <a href="/check?username=admin">Check user</a>
+    <a href="/track">Track</a>
+    <a href="/lookup">Lookup</a>
+    <a href="/login">Login</a>
+    <a href="/feedback">Feedback</a>
+    <a href="/register">Register</a>
+    <a href="/profile">Profile</a>
+  </nav>
+  <hr>
+  {% block body %}{% endblock %}
+</body>
+</html>

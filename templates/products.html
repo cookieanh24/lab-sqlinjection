@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Products <span class="tag">error-based</span> <span class="tag">UNION-based</span></h2>
+<form method="get" action="/products">
+  <label>id: <input name="id" value="{{ request.args.get('id','') }}"></label>
+  <label>search: <input name="search" value="{{ request.args.get('search','') }}"></label>
+  <button>Xem</button>
+</form>
+
+{% if query %}<p>Truy van chay: <code>{{ query }}</code></p>{% endif %}
+{% if error %}<div class="err">{{ error }}</div>{% endif %}
+
+<table>
+  <tr><th>id</th><th>name</th><th>description</th></tr>
+  {% for r in rows %}
+  <tr><td>{{ r['id'] }}</td><td>{{ r['name'] }}</td><td>{{ r['description'] }}</td></tr>
+  {% endfor %}
+</table>
+<p><small>Gợi ý: thử <code>?id=1'</code>, rồi <code>?id=0 UNION SELECT ...</code> (3 cột).</small></p>
+{% endblock %}
