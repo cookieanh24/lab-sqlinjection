@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Khoi chay SQLi Lab (DBS401). Chi chay tren localhost.
+# Khoi chay SQLi Lab. Chi chay tren localhost.
 set -e
 cd "$(dirname "$0")"
 
