@@ -1,6 +1,6 @@
 """
 ===========================================================================
- SQL INJECTION LAB  -  DBS401 / FPT University
+ SQL INJECTION LAB  
 ===========================================================================
  CANH BAO GIAO DUC:
    - Ung dung nay CO Y chua lo hong SQL injection de hoc tap.
